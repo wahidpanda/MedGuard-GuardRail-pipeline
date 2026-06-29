@@ -1,0 +1,62 @@
+:root {
+  /* Palette — clinical slate + signal amber. Deliberately not cream/acid/broadsheet. */
+  --bg: #0e1719;
+  --bg-elevated: #142225;
+  --panel: #18292d;
+  --panel-2: #1d3236;
+  --line: #294247;
+  --line-soft: #20363a;
+
+  --ink: #eaf2f1;
+  --ink-soft: #9fb6b6;
+  --ink-mute: #6c8688;
+
+  --teal: #3fb6a8;
+  --teal-deep: #1d6b66;
+  --amber: #e8a13a;
+  --amber-soft: #3a2f1c;
+
+  --pass: #46c08a;
+  --flag: #e8a13a;
+  --block: #e35d5d;
+
+  --radius: 4px;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+
+  --shadow: 0 1px 0 rgba(255,255,255,0.02), 0 12px 32px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(900px 400px at 80% -10%, rgba(63,182,168,0.06), transparent),
+    radial-gradient(700px 500px at -10% 110%, rgba(232,161,58,0.04), transparent);
+  background-attachment: fixed;
+}
+
+button { font-family: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.mono { font-family: var(--mono); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 10px; border: 3px solid var(--bg); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
